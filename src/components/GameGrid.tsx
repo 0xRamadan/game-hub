@@ -1,22 +1,23 @@
 import { SimpleGrid, Text } from "@chakra-ui/react";
-import useGames from "../hooks/useGames";
-import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
+import GameCard from "./GameCard";
+import useGames, { Platform } from "../hooks/useGames";
 import { Genre } from "../hooks/useGenres";
 
 interface Props {
     selectedGenre: Genre | null;
+    selectedPlatform: Platform | null;
 }
 
-const GameGrid = ({selectedGenre}: Props) => {
+const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
 
     /* 
         we created a custom hook to fetch the games, now
         the GameGrid component is only responsible for rendering the markup and
         doesn't know anything about the data fetching.
     */
-    const { data, error, isLoading } = useGames(selectedGenre);
+    const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
     const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
     return (
@@ -25,7 +26,7 @@ const GameGrid = ({selectedGenre}: Props) => {
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 5 }} padding='10px' spacing={3}>
                 {isLoading && skeletons.map(skeleton =>
                     <GameCardContainer key={skeleton}>
-                        <GameCardSkeleton/>
+                        <GameCardSkeleton />
                     </GameCardContainer>
                 )}
                 {data.map(game => (
