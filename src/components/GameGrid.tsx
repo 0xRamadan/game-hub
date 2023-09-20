@@ -3,21 +3,20 @@ import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 import GameCard from "./GameCard";
 import useGames, { Platform } from "../hooks/useGames";
-import { Genre } from "../hooks/useGenres";
+import { GameQuery } from "../App";
 
 interface Props {
-    selectedGenre: Genre | null;
-    selectedPlatform: Platform | null;
+    gameQuery: GameQuery;
 }
 
-const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
+const GameGrid = ({ gameQuery }: Props) => {
 
     /* 
         we created a custom hook to fetch the games, now
         the GameGrid component is only responsible for rendering the markup and
         doesn't know anything about the data fetching.
     */
-    const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
+    const { data, error, isLoading } = useGames(gameQuery);
     const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
     return (
