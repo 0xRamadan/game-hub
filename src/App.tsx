@@ -23,7 +23,6 @@ function App() {
 
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
 
-  console.log(import.meta.env.VITE_API_KEY);
   return (
     <Grid
       templateAreas={{
