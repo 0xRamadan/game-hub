@@ -23,11 +23,11 @@ const GameGrid = ({ gameQuery }: Props) => {
 
     if (error) return <Text>{error.message}</Text>
 
-    const fetchedGamesCount = data?.pages.reduce((acc, page) => acc + page.results.length, 0);
+    const fetchedGamesCount = data?.pages.reduce((acc, page) => acc + page.results.length, 0) || 0;
 
     return (
         <InfiniteScroll 
-        dataLength={fetchedGamesCount || 0}
+        dataLength={fetchedGamesCount}
         hasMore={!!hasNextPage}
         next={() => fetchNextPage()}
         loader={<Spinner marginY={5}/>}
