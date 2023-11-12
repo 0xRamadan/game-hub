@@ -1,24 +1,20 @@
 import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import { Fragment } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { GameQuery } from "../App";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
+import useGameQueryStore from "../store";
 
-interface Props {
-    gameQuery: GameQuery;
-}
-
-const GameGrid = ({ gameQuery }: Props) => {
+const GameGrid = () => {
 
     /* 
         created a custom hook to fetch the games, now
         the GameGrid component is only responsible for rendering the markup and
         doesn't know anything about the data fetching.
     */
-    const { data, error, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage } = useGames(gameQuery);
+    const { data, error, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage } = useGames();
     const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
     if (error) return <Text>{error.message}</Text>
