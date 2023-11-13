@@ -20,7 +20,7 @@ export const SearchInput = () => {
         <form onSubmit={handleOnSubmit}>
             <InputGroup>
                 <InputLeftElement children={<BsSearch />} />
-                <Input ref={ref} borderRadius={20} placeholder='Search games...' variant='filled' />
+                <Input ref={ref} borderRadius={20} placeholder='Search games...' variant='filled' minW="160px"/>
             </InputGroup>
         </form>
     );

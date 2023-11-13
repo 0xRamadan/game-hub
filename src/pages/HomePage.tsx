@@ -22,16 +22,14 @@ const HomePage = () => {
                     <GenreList />
                 </GridItem>
             </Show>
-            <GridItem area="main">
-                <Box>
-                    <GameHeading />
-                    <Flex marginBottom={5}>
-                        <Box marginRight={5}>
-                            <PlatformSelector />
-                        </Box>
-                        <SortSelector />
-                    </Flex>
-                </Box>
+            <GridItem area="main" paddingX={{ base: 4, lg: 5 }}>
+                <GameHeading />
+                <Flex marginBottom={5}>
+                    <Box marginRight={5}>
+                        <PlatformSelector />
+                    </Box>
+                    <SortSelector />
+                </Flex>
                 <GameGrid />
             </GridItem>
         </Grid>

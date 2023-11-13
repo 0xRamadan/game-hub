@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <HStack paddingX={{ base: 2, md: 5 }} paddingY={5} >
+    <HStack paddingX={{ base: 2, md: 5 }} paddingY={5}>
       <Link to="/">
         <Box w="60px">
           <Image src={logo} alt="logo" boxSize="60px" objectFit="cover" />
