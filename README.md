@@ -36,6 +36,24 @@ If the [RAWG API](https://rawg.io/apidocs) is still fetching the data, Ignore th
     * Create Lookup Hooks.
     * Removing Duplicate Interfaces
 
+> Level Three
+
+* Consolidating State Logic with a Reducer.
+* Sharing State using React Context.
+* Organizing Code for Scalability and Maintainability.
+* Managing Application State with Zustand ( A State Management Library).
+    * Preventing Unnecessary Renders with Selectors
+    * Inspecting Stores with Zustand DevTools
+* Setup Routing using React Router
+    * Navigation
+    * Passing Data with Route Parameters
+    * Getting Data about the Current Route
+    * Nested Routers
+    * Private Routes
+    * Layout Routes
+    * Handling Errors
+
+
 
 
 
