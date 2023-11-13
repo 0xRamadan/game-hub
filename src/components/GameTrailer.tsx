@@ -1,4 +1,4 @@
-import { Heading, Skeleton, Spinner, Text } from "@chakra-ui/react";
+import { Box, Heading, Skeleton, Spinner, Text } from "@chakra-ui/react";
 import useTrailers from "../hooks/useTrailers";
 
 interface Props {
@@ -16,14 +16,14 @@ const GameTrailer = ({ gameId }: Props) => {
     const first = data?.results[0]
 
     return (
-        <>
-            <Heading fontSize="md" marginY={2} >Trailer</Heading>
+        <Box marginBottom={4}>
+            <Heading fontSize="2xl" marginY={2} color="gray.600">Trailer</Heading>
             {first ?
                 <Skeleton borderRadius={5} isLoaded={!isLoading}>
                     <video src={first.data[480]} poster={first.preview} controls />
                 </Skeleton>
                 : <Text>There is no trailer for this game By this API.</Text>}
-        </>
+        </Box>
     )
 }
 

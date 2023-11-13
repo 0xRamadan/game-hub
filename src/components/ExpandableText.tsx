@@ -14,7 +14,7 @@ const ExpandableText = ({ children }: Props) => {
 
 
     return (
-        <Text>{summary}
+        <Text fontSize="xl">{summary}
             <Button
                 size={"xs"}
                 fontWeight={'bold'}
