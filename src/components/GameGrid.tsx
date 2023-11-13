@@ -5,7 +5,6 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
-import useGameQueryStore from "../store";
 
 const GameGrid = () => {
 
@@ -15,7 +14,8 @@ const GameGrid = () => {
         doesn't know anything about the data fetching.
     */
     const { data, error, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage } = useGames();
-    const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    
+    const skeletons = new Array(20).fill('')
 
     if (error) return <Text>{error.message}</Text>
 
@@ -29,8 +29,8 @@ const GameGrid = () => {
         loader={<Spinner marginY={5}/>}
         >
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={6}>
-                {isLoading && skeletons.map(skeleton =>
-                    <GameCardContainer key={skeleton}>
+                {isLoading && skeletons.map((_, i) =>
+                    <GameCardContainer key={i}>
                         <GameCardSkeleton />
                     </GameCardContainer>
                 )}

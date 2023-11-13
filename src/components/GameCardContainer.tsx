@@ -12,7 +12,9 @@ const GameCardContainer = ({ children }: Props) => {
                 transform: 'scale(1.03)',
                 transition: 'transform .15s ease-in'
             }}
-            borderRadius={10} overflow='hidden'>
+            borderRadius={10}
+            // border="2px solid #777"
+        >
             {children}
         </Box>
     )
