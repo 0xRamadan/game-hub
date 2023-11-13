@@ -15,7 +15,7 @@ const GameDetailPage = () => {
 
   return (
     <>
-      <Heading>{game.name}</Heading>
+      <Heading paddingBottom={4}>{game.name}</Heading>
       <ExpandableText>{game.description_raw}</ExpandableText>
       <GameAttributes game={game} />
       <GameTrailer gameId={game.id} />
