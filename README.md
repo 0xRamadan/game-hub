@@ -6,6 +6,11 @@ I build this project with the help of The Ultimate React course by Mosh-Hamedani
 
 You can explore the project [here](https://game-hub-by-ramadan.vercel.app/).
 
+Watch the preview video:
+
+https://github.com/0xRamadan/game-hub/assets/61415078/948111f1-3951-4695-96ca-e45fd3eb6e3a
+
+
 > 📝 **Note** <br/>
 If the [RAWG API](https://rawg.io/apidocs) is still fetching the data, Ignore this note. If it's not fetching the data anymore, this means that the number of the requests available on the free tier has been exceeded.
 
